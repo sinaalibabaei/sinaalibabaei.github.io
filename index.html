@@ -1,549 +1,545 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سینا علی بابائی | رزومه</title>
-    <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* 🌟 CSS Variables for Theme */
-        :root {
-            --bg-color: #0f172a;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.4);
-            --border: rgba(255, 255, 255, 0.1);
-            --tag-advanced: #10b981;
-            --tag-intermediate: #f59e0b;
-            --tag-beginner: #64748b;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رزومه سینا علی بابائی</title>
 
-        [data-theme="light"] {
-            --bg-color: #f1f5f9;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --card-bg: rgba(255, 255, 255, 0.7);
-            --accent: #2563eb;
-            --accent-glow: rgba(37, 99, 235, 0.2);
-            --border: rgba(0, 0, 0, 0.1);
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+  <style>
+    :root {
+      --navy: #172554;
+      --indigo: #4338ca;
+      --ink: #20283a;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --soft: #f4f6fc;
+      --white: #ffffff;
+    }
 
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.7;
-            transition: background-color 0.4s ease, color 0.4s ease;
-            overflow-x: hidden;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        /* 🌌 Animated Background */
-        .bg-glow {
-            position: fixed;
-            top: -20%; left: -10%;
-            width: 50vw; height: 50vw;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
-            border-radius: 50%;
-            z-index: -1;
-            animation: float 10s infinite ease-in-out alternate;
-        }
-        .bg-glow-2 {
-            top: auto; left: auto;
-            bottom: -20%; right: -10%;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
-            animation-delay: -5s;
-        }
+    @page {
+      size: A4;
+      margin: 0;
+    }
 
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(30px, 50px); }
-        }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      color: var(--ink);
+      background: #e8ecf4;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
 
-        /* 🌗 Theme Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 20px; left: 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            width: 45px; height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            transition: all 0.3s ease;
-        }
-        .theme-toggle:hover { transform: scale(1.1); box-shadow: 0 0 15px var(--accent-glow); }
+    body {
+      font-size: 9px;
+      line-height: 1.65;
+    }
 
-        /* Container */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
 
-        /* 🎴 Glassmorphism Card Style */
-        .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
+    .resume {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      margin: 14px auto;
+      background: var(--white);
+      overflow: hidden;
+      box-shadow: 0 12px 45px rgb(15 23 42 / 12%);
+    }
 
-        .glass-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .glass-card:hover {
-            box-shadow: 0 10px 40px var(--accent-glow);
-        }
+    .header {
+      position: relative;
+      padding: 10mm 11mm 7mm;
+      color: white;
+      background:
+        radial-gradient(circle at 12% 0%, rgb(99 102 241 / 30%), transparent 35%),
+        linear-gradient(125deg, #172554 0%, #252d68 65%, #4338ca 100%);
+    }
 
-        /* Header Section */
-        .header-card {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    .header::after {
+      content: "";
+      position: absolute;
+      left: -25mm;
+      bottom: -37mm;
+      width: 75mm;
+      height: 75mm;
+      border: 1px solid rgb(255 255 255 / 12%);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 10mm rgb(255 255 255 / 3%),
+        0 0 0 20mm rgb(255 255 255 / 2%);
+      pointer-events: none;
+    }
 
-        .name-title h1 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            background: linear-gradient(90deg, var(--text-main), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
-        }
+    .name {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.5;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
 
-        .name-title h2 {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
+    .headline {
+      margin-top: 2px;
+      color: #c7d2fe;
+      font-size: 11px;
+      font-weight: 500;
+    }
 
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    .intro {
+      max-width: 168mm;
+      margin: 8px 0 10px;
+      color: #edf2ff;
+      font-size: 9px;
+      line-height: 1.95;
+    }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            cursor: pointer;
-            direction: ltr;
-        }
-        .contact-item i { color: var(--accent); font-size: 1.2rem; width: 20px; text-align: center; }
-        .contact-item:hover { color: var(--accent); }
+    .contact {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 15px;
+      padding-top: 8px;
+      border-top: 1px solid rgb(255 255 255 / 22%);
+      font-size: 8px;
+      color: #f8fafc;
+    }
 
-        /* Main Grid Layout */
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.8fr;
-            gap: 25px;
-        }
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      min-width: 0;
+    }
 
-        /* Sections Typography */
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-title i { color: var(--accent); }
+    .contact-label {
+      color: #c7d2fe;
+      font-weight: 700;
+    }
 
-        .about-text {
-            color: var(--text-muted);
-            text-align: justify;
-        }
+    .content {
+      display: grid;
+      grid-template-columns: 1.62fr 1fr;
+      gap: 7mm;
+      padding: 6mm 11mm 8mm;
+    }
 
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-right: 20px;
-            border-right: 2px solid var(--border);
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 25px;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            right: -26px;
-            top: 6px;
-            width: 12px; height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent);
-        }
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        .timeline-title { font-weight: 800; font-size: 1.1rem; }
-        .timeline-date { font-size: 0.85rem; color: var(--accent); background: var(--accent-glow); padding: 2px 10px; border-radius: 20px;}
-        .timeline-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
+    .main,
+    .sidebar {
+      min-width: 0;
+    }
 
-        /* Skills Badges */
-        .skill-group { margin-bottom: 20px; }
-        .skill-group-title {
-            font-weight: 700;
-            margin-bottom: 10px;
-            font-size: 1rem;
-            color: var(--text-main);
-        }
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-        
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(0,0,0,0.2);
-            border: 1px solid var(--border);
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-        [data-theme="light"] .tag { background: rgba(255,255,255,0.5); }
+    .section {
+      margin: 0 0 4.5mm;
+      break-inside: avoid;
+    }
 
-        .tag:hover { transform: translateY(-3px); box-shadow: 0 5px 15px var(--accent-glow); border-color: var(--accent); }
-        
-        .tag .name { font-weight: 700; margin-left: 8px; }
-        .tag .level { font-size: 0.7rem; padding: 2px 6px; border-radius: 6px; font-weight: 800; }
-        
-        .level-adv { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
-        .level-int { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
-        .level-beg { background: rgba(100, 116, 139, 0.2); color: #94a3b8; border: 1px solid rgba(100, 116, 139, 0.3); }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin: 0 0 7px;
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+    }
 
-        /* Certifications */
-        .cert-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: rgba(0,0,0,0.1);
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border: 1px solid var(--border);
-        }
-        .cert-icon { font-size: 1.5rem; color: var(--accent); }
-        .cert-info h4 { font-size: 1rem; margin-bottom: 3px; }
-        .cert-info p { font-size: 0.8rem; color: var(--text-muted); }
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 16px;
+      flex: 0 0 4px;
+      border-radius: 5px;
+      background: var(--indigo);
+    }
 
-        /* Info List */
-        .info-list { list-style: none; }
-        .info-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px dashed var(--border);
-            font-size: 0.9rem;
-        }
-        .info-list li span:first-child { color: var(--text-muted); }
-        .info-list li span:last-child { font-weight: 700; }
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+    }
 
-        /* Copy Toast */
-        .toast {
-            position: fixed;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            transition: bottom 0.3s ease;
-            box-shadow: 0 5px 15px var(--accent-glow);
-            z-index: 1000;
-        }
-        .toast.show { bottom: 30px; }
+    .entry {
+      position: relative;
+      margin-bottom: 10px;
+      padding-right: 12px;
+      border-right: 1px solid #c7d2fe;
+      break-inside: avoid;
+    }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .grid-layout { grid-template-columns: 1fr; }
-            .header-card { flex-direction: column; align-items: flex-start; }
-            .name-title h1 { font-size: 2rem; }
-            .container { padding: 20px 15px; }
-        }
+    .entry::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      right: -4px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--indigo);
+    }
 
-        /* Print Settings */
-        @media print {
-            body { background: #fff; color: #000; }
-            .bg-glow, .theme-toggle { display: none; }
-            .glass-card { 
-                border: 1px solid #ccc; 
-                box-shadow: none; 
-                backdrop-filter: none;
-                opacity: 1;
-                transform: none;
-            }
-            .container { max-width: 100%; padding: 0; }
-            @page { margin: 1.5cm; size: A4; }
-            .timeline-item::before { box-shadow: none; }
-            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-        }
-    </style>
+    .entry-title {
+      margin: 0;
+      color: #1e293b;
+      font-size: 9.5px;
+      font-weight: 800;
+    }
+
+    .entry-subtitle {
+      margin-top: 1px;
+      color: var(--indigo);
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .entry-date {
+      display: inline-block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 7.5px;
+    }
+
+    p {
+      margin: 4px 0 0;
+    }
+
+    ul {
+      margin: 4px 0 0;
+      padding-right: 13px;
+    }
+
+    li {
+      padding-right: 1px;
+      margin-bottom: 2px;
+    }
+
+    li::marker {
+      color: var(--indigo);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .skill-group {
+      margin-bottom: 9px;
+      break-inside: avoid;
+    }
+
+    .skill-heading {
+      margin-bottom: 4px;
+      color: var(--navy);
+      font-size: 8.5px;
+      font-weight: 800;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 6px;
+      border: 1px solid #e0e7ff;
+      border-radius: 4px;
+      background: #f5f6ff;
+      color: #3730a3;
+      font-size: 7.5px;
+      line-height: 1.7;
+    }
+
+    .language {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .language:last-child {
+      border-bottom: 0;
+    }
+
+    .language-name {
+      font-weight: 700;
+    }
+
+    .language-level {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .info-card {
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--soft);
+    }
+
+    .info-card p {
+      margin: 0 0 5px;
+    }
+
+    .info-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer {
+      position: absolute;
+      right: 11mm;
+      bottom: 4mm;
+      left: 11mm;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 5px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 7px;
+    }
+
+    .footer strong {
+      color: var(--indigo);
+    }
+
+    @media screen {
+      .resume {
+        min-height: 297mm;
+      }
+    }
+
+    @media print {
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+        background: white;
+      }
+
+      .resume {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        box-shadow: none;
+        overflow: hidden;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .section,
+      .entry,
+      .skill-group {
+        break-inside: avoid;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <article class="resume">
 
-    <!-- Animated Background -->
-    <div class="bg-glow"></div>
-    <div class="bg-glow bg-glow-2"></div>
+    <header class="header">
+      <h1 class="name">سینا علی بابائی</h1>
 
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" id="themeToggle" title="تغییر تم">
-        <i class="fas fa-moon"></i>
-    </button>
 
-    <!-- Toast for copy -->
-    <div class="toast" id="toast">کپی شد!</div>
+      <div class="contact">
+        <span class="contact-item">
+          <span class="contact-label">تلفن</span>
+          <a href="tel:09109121645" dir="ltr">09109121645</a>
+        </span>
 
-    <div class="container">
-        
-        <!-- Header -->
-        <header class="glass-card header-card">
-            <div class="name-title">
-                <h1>سینا علی بابائی</h1>
-                <h2>کارشناس برنامه‌نویسی، امور کامپیوتری و اداری</h2>
+        <span class="contact-item">
+          <span class="contact-label">ایمیل</span>
+          <a href="mailto:sina.alibabaei137@gmail.com" dir="ltr">
+            sina.alibabaei137@gmail.com
+          </a>
+        </span>
+
+        <span class="contact-item">
+          <span class="contact-label">گیت‌هاب</span>
+          <a href="https://github.com/sinaalibabaei" dir="ltr">
+            github.com/sinaalibabaei
+          </a>
+        </span>
+
+        <span class="contact-item">
+          <span class="contact-label">محل سکونت</span>
+          تهران، تهرانسر
+        </span>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <main class="main">
+
+        <section class="section">
+          <h2 class="section-title">سوابق شغلی</h2>
+
+          <div class="entry">
+            <h3 class="entry-title">کارشناس امور کامپیوتری و اداری</h3>
+            <div class="entry-subtitle">واحد منابع انسانی</div>
+            <span class="entry-date">مدت همکاری: ۱ سال و ۳ ماه | تهران</span>
+
+            <ul>
+              <li>مدیریت و به‌روزرسانی اطلاعات پرسنلی و انجام امور اداری مرتبط.</li>
+              <li>پشتیبانی از سیستم‌های کامپیوتری و کمک به رفع مشکلات روزمره کاربران.</li>
+              <li>سامان‌دهی اسناد دیجیتال و هماهنگی فرایندهای اداری.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">تحصیلات</h2>
+
+          <div class="entry">
+            <h3 class="entry-title">کارشناسی مهندسی مکانیک</h3>
+            <div class="entry-subtitle">دانشگاه آزاد اسلامی، واحد تهران مرکزی</div>
+            <span class="entry-date">۱۳۹۷ تا ۱۴۰۲</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">دوره‌های تخصصی</h2>
+
+          <div class="entry">
+            <h3 class="entry-title">CS50P — برنامه‌نویسی با پایتون</h3>
+            <div class="entry-subtitle">Harvard University · CS50</div>
+          </div>
+
+          <div class="entry">
+            <h3 class="entry-title">CS50 SQL — پایگاه داده با SQL</h3>
+            <div class="entry-subtitle">Harvard University · CS50</div>
+          </div>
+
+          <div class="entry">
+            <h3 class="entry-title">CS50 Cybersecurity — مبانی امنیت سایبری</h3>
+            <div class="entry-subtitle">Harvard University · CS50</div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">مهارت‌های تکمیلی</h2>
+
+          <div class="skill-group">
+            <div class="skill-heading">نرم‌افزارهای اداری</div>
+            <div class="tags">
+              <span class="tag">Excel</span>
+              <span class="tag">Word</span>
+              <span class="tag">PowerPoint</span>
+              <span class="tag">Photoshop</span>
             </div>
-            <div class="contact-links">
-                <div class="contact-item" onclick="copyToClipboard('09109121645')" title="کلیک برای کپی">
-                    <i class="fas fa-phone"></i>
-                    <span>۰۹۱۰۹۱۲۱۶۴۵</span>
-                </div>
-                <div class="contact-item" onclick="copyToClipboard('sina.alibabaei137@gmail.com')" title="کلیک برای کپی">
-                    <i class="fas fa-envelope"></i>
-                    <span>sina.alibabaei137@gmail.com</span>
-                </div>
-                <a href="https://github.com/sinaalibabaei" target="_blank" class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>github.com/sinaalibabaei</span>
-                </a>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>تهران / تهرانسر</span>
-                </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-heading">فناوری و زیرساخت</div>
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Linux</span>
+              <span class="tag">WordPress</span>
+              <span class="tag">Network+</span>
+              <span class="tag">Security+</span>
+              <span class="tag">مجازی‌سازی سرور</span>
             </div>
-        </header>
+          </div>
+        </section>
 
-        <div class="grid-layout">
-            
-            <!-- Right Column (Sidebar) -->
-            <aside>
-                <!-- About -->
-                <section class="glass-card">
-                    <h3 class="section-title"><i class="fas fa-user-astronaut"></i> درباره من</h3>
-                    <p class="about-text">
-                        فردی خلاق، علاقه‌مند به یادگیری و مهارت‌آموزی در حوزه تکنولوژی و برنامه‌نویسی. دارای پیش‌زمینه قوی در توسعه نرم‌افزار (پایتون، SQL)، مدیریت پایگاه داده و مهارت‌های اداری. توانمند در کار تیمی، یادگیری سریع نرم‌افزارهای جدید و مدیریت وظایف در محیط‌های پویا.
-                    </p>
-                </section>
+      </main>
 
-                <!-- Skills -->
-                <section class="glass-card">
-                    <h3 class="section-title"><i class="fas fa-code"></i> مهارت‌های تخصصی</h3>
-                    
-                    <div class="skill-group">
-                        <div class="skill-group-title">برنامه‌نویسی و پایگاه داده</div>
-                        <div class="tags">
-                            <span class="tag"><span class="name">Python</span><span class="level level-adv">پیشرفته</span></span>
-                            <span class="tag"><span class="name">SQL</span><span class="level level-adv">پیشرفته</span></span>
-                            <span class="tag"><span class="name">MySQL</span><span class="level level-adv">پیشرفته</span></span>
-                            <span class="tag"><span class="name">MongoDB</span><span class="level level-adv">پیشرفته</span></span>
-                            <span class="tag"><span class="name">HTML & CSS</span><span class="level level-int">متوسط</span></span>
-                            <span class="tag"><span class="name">C</span><span class="level level-beg">مقدماتی</span></span>
-                        </div>
-                    </div>
+      <aside class="sidebar">
 
-                    <div class="skill-group">
-                        <div class="skill-group-title">ابزارها و سیستم‌عامل</div>
-                        <div class="tags">
-                            <span class="tag"><span class="name">Visual Studio</span><span class="level level-adv">پیشرفته</span></span>
-                            <span class="tag"><span class="name">Git</span><span class="level level-int">متوسط</span></span>
-                            <span class="tag"><span class="name">Docker</span><span class="level level-int">متوسط</span></span>
-                            <span class="tag"><span class="name">Linux</span><span class="level level-beg">مقدماتی</span></span>
-                            <span class="tag"><span class="name">WordPress</span><span class="level level-beg">مقدماتی</span></span>
-                        </div>
-                    </div>
+        <section class="section">
+          <h2 class="section-title">مهارت‌های فنی</h2>
 
-                    <div class="skill-group">
-                        <div class="skill-group-title">شبکه و امنیت</div>
-                        <div class="tags">
-                            <span class="tag"><span class="name">Security+</span><span class="level level-beg">مقدماتی</span></span>
-                            <span class="tag"><span class="name">Network+</span><span class="level level-beg">مقدماتی</span></span>
-                            <span class="tag"><span class="name">Server Virtualization</span><span class="level level-beg">مقدماتی</span></span>
-                        </div>
-                    </div>
+          <div class="skill-group">
+            <div class="skill-heading">برنامه‌نویسی</div>
+            <div class="tags">
+              <span class="tag">Python · پیشرفته</span>
+              <span class="tag">SQL · پیشرفته</span>
+              <span class="tag">HTML/CSS · متوسط</span>
+              <span class="tag">C · مقدماتی</span>
+            </div>
+          </div>
 
-                    <div class="skill-group">
-                        <div class="skill-group-title">نرم‌افزارهای اداری</div>
-                        <div class="tags">
-                            <span class="tag"><span class="name">Excel</span><span class="level level-adv">پیشرفته</span></span>
-                            <span class="tag"><span class="name">Word</span><span class="level level-adv">پیشرفته</span></span>
-                            <span class="tag"><span class="name">PowerPoint</span><span class="level level-adv">پیشرفته</span></span>
-                            <span class="tag"><span class="name">Photoshop</span><span class="level level-int">متوسط</span></span>
-                        </div>
-                    </div>
-                </section>
-            </aside>
+          <div class="skill-group">
+            <div class="skill-heading">پایگاه داده</div>
+            <div class="tags">
+              <span class="tag">MySQL · پیشرفته</span>
+              <span class="tag">MongoDB · پیشرفته</span>
+            </div>
+          </div>
 
-            <!-- Left Column (Main Content) -->
-            <main>
-                <!-- Experience -->
-                <section class="glass-card">
-                    <h3 class="section-title"><i class="fas fa-briefcase"></i> سوابق شغلی</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-header">
-                                <span class="timeline-title">کارشناس امور کامپیوتری و اداری</span>
-                                <span class="timeline-date">۱ سال و ۳ ماه</span>
-                            </div>
-                            <div class="timeline-sub">کارگزینی نیروی انسانی | تهران</div>
-                            <ul style="padding-right: 20px; color: var(--text-muted); font-size: 0.9rem;">
-                                <li>مدیریت و سازماندهی اطلاعات پرسنلی و امور اداری.</li>
-                                <li>پشتیبانی سیستم‌های کامپیوتری و بهینه‌سازی فرآیندهای اداری.</li>
-                                <li>هماهنگی و مدیریت مستندات اداری در بستر سیستم‌های دیجیتال.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+          <div class="skill-group">
+            <div class="skill-heading">ابزارهای توسعه</div>
+            <div class="tags">
+              <span class="tag">Visual Studio · پیشرفته</span>
+              <span class="tag">Git · متوسط</span>
+              <span class="tag">Docker · متوسط</span>
+            </div>
+          </div>
+        </section>
 
-                <!-- Education -->
-                <section class="glass-card">
-                    <h3 class="section-title"><i class="fas fa-graduation-cap"></i> سوابق تحصیلی</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-header">
-                                <span class="timeline-title">کارشناسی مهندسی مکانیک</span>
-                                <span class="timeline-date">۱۳۹۷ - ۱۴۰۲</span>
-                            </div>
-                            <div class="timeline-sub">دانشگاه آزاد اسلامی تهران مرکز</div>
-                        </div>
-                    </div>
-                </section>
+        <section class="section">
+          <h2 class="section-title">زبان‌ها</h2>
 
-                <!-- Certifications -->
-                <section class="glass-card">
-                    <h3 class="section-title"><i class="fas fa-certificate"></i> دوره‌های تخصصی (Harvard CS)</h3>
-                    
-                    <div class="cert-item">
-                        <i class="fas fa-terminal cert-icon"></i>
-                        <div class="cert-info">
-                            <h4>Programming With Python</h4>
-                            <p>طول دوره: ۶ ماه</p>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-database cert-icon"></i>
-                        <div class="cert-info">
-                            <h4>Databases With SQL</h4>
-                            <p>طول دوره: ۶ ماه</p>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-shield-alt cert-icon"></i>
-                        <div class="cert-info">
-                            <h4>Cyber Security</h4>
-                            <p>طول دوره: ۶ ماه</p>
-                        </div>
-                    </div>
-                </section>
+          <div class="language">
+            <span class="language-name">انگلیسی</span>
+            <span class="language-level">متوسط</span>
+          </div>
+        </section>
 
-                <!-- Personal Info -->
-                <section class="glass-card">
-                    <h3 class="section-title"><i class="fas fa-id-card"></i> مشخصات فردی</h3>
-                    <ul class="info-list">
-                        <li><span>سن</span> <span>۲۷ سال</span></li>
-                        <li><span>جنسیت</span> <span>مرد</span></li>
-                        <li><span>وضعیت تاهل</span> <span>مجرد</span></li>
-                        <li><span>خدمت سربازی</span> <span>انجام شده</span></li>
-                        <li><span>محل سکونت</span> <span>تهران / تهرانسر</span></li>
-                        <li><span>زبان‌ها</span> <span>ترکی (مادری) / انگلیسی (متوسط)</span></li>
-                    </ul>
-                </section>
-            </main>
-        </div>
+        <section class="section">
+          <h2 class="section-title">توانمندی‌های فردی</h2>
+
+          <div class="tags">
+            <span class="tag">یادگیری سریع</span>
+            <span class="tag">حل مسئله</span>
+            <span class="tag">کار تیمی</span>
+            <span class="tag">مدیریت وظایف</span>
+            <span class="tag">یادگیری مستمر</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">درباره من</h2>
+
+          <div class="info-card">
+            <p>علاقه‌مند به برنامه‌نویسی و توسعه نرم‌افزارهای کاربردی.</p>
+            <p>تمرکز بر پایتون، پایگاه داده و گسترش مهارت‌های فنی.</p>
+            <p>آماده یادگیری و مشارکت در پروژه‌های حرفه‌ای.</p>
+          </div>
+        </section>
+
+      </aside>
     </div>
 
-    <!-- 🧠 JavaScript for Interactivity -->
-    <script>
-        // 1. Theme Toggle Logic
-        const themeToggle = document.getElementById('themeToggle');
-        const icon = themeToggle.querySelector('i');
-        
-        // Check local storage for saved theme
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        updateIcon(currentTheme);
+    <footer class="footer">
+      <span>رزومه حرفه‌ای</span>
+      <span><strong>سینا علی بابائی</strong> · آماده همکاری و یادگیری</span>
+    </footer>
 
-        themeToggle.addEventListener('click', () => {
-            const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            updateIcon(theme);
-        });
-
-        function updateIcon(theme) {
-            if (theme === 'dark') {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-        }
-
-        // 2. Scroll Reveal Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.glass-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // 3. Copy to Clipboard
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                const toast = document.getElementById('toast');
-                toast.classList.add('show');
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 2000);
-            });
-        }
-    </script>
+  </article>
 </body>
 </html>
