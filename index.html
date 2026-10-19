@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سینا علی بابائی | رزومه</title>
+    <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 🌟 CSS Variables for Theme */
+        :root {
+            --bg-color: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.4);
+            --border: rgba(255, 255, 255, 0.1);
+            --tag-advanced: #10b981;
+            --tag-intermediate: #f59e0b;
+            --tag-beginner: #64748b;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --card-bg: rgba(255, 255, 255, 0.7);
+            --accent: #2563eb;
+            --accent-glow: rgba(37, 99, 235, 0.2);
+            --border: rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        /* 🌌 Animated Background */
+        .bg-glow {
+            position: fixed;
+            top: -20%; left: -10%;
+            width: 50vw; height: 50vw;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+            border-radius: 50%;
+            z-index: -1;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+        .bg-glow-2 {
+            top: auto; left: auto;
+            bottom: -20%; right: -10%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 50px); }
+        }
+
+        /* 🌗 Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px; left: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle:hover { transform: scale(1.1); box-shadow: 0 0 15px var(--accent-glow); }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 🎴 Glassmorphism Card Style */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .glass-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .glass-card:hover {
+            box-shadow: 0 10px 40px var(--accent-glow);
+        }
+
+        /* Header Section */
+        .header-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .name-title h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--text-main), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .name-title h2 {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            direction: ltr;
+        }
+        .contact-item i { color: var(--accent); font-size: 1.2rem; width: 20px; text-align: center; }
+        .contact-item:hover { color: var(--accent); }
+
+        /* Main Grid Layout */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+            gap: 25px;
+        }
+
+        /* Sections Typography */
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title i { color: var(--accent); }
+
+        .about-text {
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-right: 20px;
+            border-right: 2px solid var(--border);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            right: -26px;
+            top: 6px;
+            width: 12px; height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
+        }
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .timeline-title { font-weight: 800; font-size: 1.1rem; }
+        .timeline-date { font-size: 0.85rem; color: var(--accent); background: var(--accent-glow); padding: 2px 10px; border-radius: 20px;}
+        .timeline-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
+
+        /* Skills Badges */
+        .skill-group { margin-bottom: 20px; }
+        .skill-group-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        [data-theme="light"] .tag { background: rgba(255,255,255,0.5); }
+
+        .tag:hover { transform: translateY(-3px); box-shadow: 0 5px 15px var(--accent-glow); border-color: var(--accent); }
+        
+        .tag .name { font-weight: 700; margin-left: 8px; }
+        .tag .level { font-size: 0.7rem; padding: 2px 6px; border-radius: 6px; font-weight: 800; }
+        
+        .level-adv { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .level-int { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .level-beg { background: rgba(100, 116, 139, 0.2); color: #94a3b8; border: 1px solid rgba(100, 116, 139, 0.3); }
+
+        /* Certifications */
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
+        }
+        .cert-icon { font-size: 1.5rem; color: var(--accent); }
+        .cert-info h4 { font-size: 1rem; margin-bottom: 3px; }
+        .cert-info p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Info List */
+        .info-list { list-style: none; }
+        .info-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border);
+            font-size: 0.9rem;
+        }
+        .info-list li span:first-child { color: var(--text-muted); }
+        .info-list li span:last-child { font-weight: 700; }
+
+        /* Copy Toast */
+        .toast {
+            position: fixed;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: bottom 0.3s ease;
+            box-shadow: 0 5px 15px var(--accent-glow);
+            z-index: 1000;
+        }
+        .toast.show { bottom: 30px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-layout { grid-template-columns: 1fr; }
+            .header-card { flex-direction: column; align-items: flex-start; }
+            .name-title h1 { font-size: 2rem; }
+            .container { padding: 20px 15px; }
+        }
+
+        /* Print Settings */
+        @media print {
+            body { background: #fff; color: #000; }
+            .bg-glow, .theme-toggle { display: none; }
+            .glass-card { 
+                border: 1px solid #ccc; 
+                box-shadow: none; 
+                backdrop-filter: none;
+                opacity: 1;
+                transform: none;
+            }
+            .container { max-width: 100%; padding: 0; }
+            @page { margin: 1.5cm; size: A4; }
+            .timeline-item::before { box-shadow: none; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="bg-glow"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" title="تغییر تم">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Toast for copy -->
+    <div class="toast" id="toast">کپی شد!</div>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <header class="glass-card header-card">
+            <div class="name-title">
+                <h1>سینا علی بابائی</h1>
+                <h2>کارشناس برنامه‌نویسی، امور کامپیوتری و اداری</h2>
+            </div>
+            <div class="contact-links">
+                <div class="contact-item" onclick="copyToClipboard('09109121645')" title="کلیک برای کپی">
+                    <i class="fas fa-phone"></i>
+                    <span>۰۹۱۰۹۱۲۱۶۴۵</span>
+                </div>
+                <div class="contact-item" onclick="copyToClipboard('sina.alibabaei137@gmail.com')" title="کلیک برای کپی">
+                    <i class="fas fa-envelope"></i>
+                    <span>sina.alibabaei137@gmail.com</span>
+                </div>
+                <a href="https://github.com/sinaalibabaei" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/sinaalibabaei</span>
+                </a>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>تهران / تهرانسر</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid-layout">
+            
+            <!-- Right Column (Sidebar) -->
+            <aside>
+                <!-- About -->
+                <section class="glass-card">
+                    <h3 class="section-title"><i class="fas fa-user-astronaut"></i> درباره من</h3>
+                    <p class="about-text">
+                        فردی خلاق، علاقه‌مند به یادگیری و مهارت‌آموزی در حوزه تکنولوژی و برنامه‌نویسی. دارای پیش‌زمینه قوی در توسعه نرم‌افزار (پایتون، SQL)، مدیریت پایگاه داده و مهارت‌های اداری. توانمند در کار تیمی، یادگیری سریع نرم‌افزارهای جدید و مدیریت وظایف در محیط‌های پویا.
+                    </p>
+                </section>
+
+                <!-- Skills -->
+                <section class="glass-card">
+                    <h3 class="section-title"><i class="fas fa-code"></i> مهارت‌های تخصصی</h3>
+                    
+                    <div class="skill-group">
+                        <div class="skill-group-title">برنامه‌نویسی و پایگاه داده</div>
+                        <div class="tags">
+                            <span class="tag"><span class="name">Python</span><span class="level level-adv">پیشرفته</span></span>
+                            <span class="tag"><span class="name">SQL</span><span class="level level-adv">پیشرفته</span></span>
+                            <span class="tag"><span class="name">MySQL</span><span class="level level-adv">پیشرفته</span></span>
+                            <span class="tag"><span class="name">MongoDB</span><span class="level level-adv">پیشرفته</span></span>
+                            <span class="tag"><span class="name">HTML & CSS</span><span class="level level-int">متوسط</span></span>
+                            <span class="tag"><span class="name">C</span><span class="level level-beg">مقدماتی</span></span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">ابزارها و سیستم‌عامل</div>
+                        <div class="tags">
+                            <span class="tag"><span class="name">Visual Studio</span><span class="level level-adv">پیشرفته</span></span>
+                            <span class="tag"><span class="name">Git</span><span class="level level-int">متوسط</span></span>
+                            <span class="tag"><span class="name">Docker</span><span class="level level-int">متوسط</span></span>
+                            <span class="tag"><span class="name">Linux</span><span class="level level-beg">مقدماتی</span></span>
+                            <span class="tag"><span class="name">WordPress</span><span class="level level-beg">مقدماتی</span></span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">شبکه و امنیت</div>
+                        <div class="tags">
+                            <span class="tag"><span class="name">Security+</span><span class="level level-beg">مقدماتی</span></span>
+                            <span class="tag"><span class="name">Network+</span><span class="level level-beg">مقدماتی</span></span>
+                            <span class="tag"><span class="name">Server Virtualization</span><span class="level level-beg">مقدماتی</span></span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">نرم‌افزارهای اداری</div>
+                        <div class="tags">
+                            <span class="tag"><span class="name">Excel</span><span class="level level-adv">پیشرفته</span></span>
+                            <span class="tag"><span class="name">Word</span><span class="level level-adv">پیشرفته</span></span>
+                            <span class="tag"><span class="name">PowerPoint</span><span class="level level-adv">پیشرفته</span></span>
+                            <span class="tag"><span class="name">Photoshop</span><span class="level level-int">متوسط</span></span>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Left Column (Main Content) -->
+            <main>
+                <!-- Experience -->
+                <section class="glass-card">
+                    <h3 class="section-title"><i class="fas fa-briefcase"></i> سوابق شغلی</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="timeline-title">کارشناس امور کامپیوتری و اداری</span>
+                                <span class="timeline-date">۱ سال و ۳ ماه</span>
+                            </div>
+                            <div class="timeline-sub">کارگزینی نیروی انسانی | تهران</div>
+                            <ul style="padding-right: 20px; color: var(--text-muted); font-size: 0.9rem;">
+                                <li>مدیریت و سازماندهی اطلاعات پرسنلی و امور اداری.</li>
+                                <li>پشتیبانی سیستم‌های کامپیوتری و بهینه‌سازی فرآیندهای اداری.</li>
+                                <li>هماهنگی و مدیریت مستندات اداری در بستر سیستم‌های دیجیتال.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="glass-card">
+                    <h3 class="section-title"><i class="fas fa-graduation-cap"></i> سوابق تحصیلی</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <span class="timeline-title">کارشناسی مهندسی مکانیک</span>
+                                <span class="timeline-date">۱۳۹۷ - ۱۴۰۲</span>
+                            </div>
+                            <div class="timeline-sub">دانشگاه آزاد اسلامی تهران مرکز</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section class="glass-card">
+                    <h3 class="section-title"><i class="fas fa-certificate"></i> دوره‌های تخصصی (Harvard CS)</h3>
+                    
+                    <div class="cert-item">
+                        <i class="fas fa-terminal cert-icon"></i>
+                        <div class="cert-info">
+                            <h4>Programming With Python</h4>
+                            <p>طول دوره: ۶ ماه</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-database cert-icon"></i>
+                        <div class="cert-info">
+                            <h4>Databases With SQL</h4>
+                            <p>طول دوره: ۶ ماه</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-shield-alt cert-icon"></i>
+                        <div class="cert-info">
+                            <h4>Cyber Security</h4>
+                            <p>طول دوره: ۶ ماه</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Personal Info -->
+                <section class="glass-card">
+                    <h3 class="section-title"><i class="fas fa-id-card"></i> مشخصات فردی</h3>
+                    <ul class="info-list">
+                        <li><span>سن</span> <span>۲۷ سال</span></li>
+                        <li><span>جنسیت</span> <span>مرد</span></li>
+                        <li><span>وضعیت تاهل</span> <span>مجرد</span></li>
+                        <li><span>خدمت سربازی</span> <span>انجام شده</span></li>
+                        <li><span>محل سکونت</span> <span>تهران / تهرانسر</span></li>
+                        <li><span>زبان‌ها</span> <span>ترکی (مادری) / انگلیسی (متوسط)</span></li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- 🧠 JavaScript for Interactivity -->
+    <script>
+        // 1. Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const icon = themeToggle.querySelector('i');
+        
+        // Check local storage for saved theme
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateIcon(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateIcon(theme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        }
+
+        // 2. Scroll Reveal Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // 3. Copy to Clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
